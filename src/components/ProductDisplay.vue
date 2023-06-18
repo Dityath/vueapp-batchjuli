@@ -6,13 +6,22 @@
                 price: 75,
                 amount: 0,
                 // subTotal: 0,
-                isAmountGreaterThan3: false
+                isAmountGreaterThan3: 0
             }
         },
         methods: {
             addToCart() {
                 if (this.amount > 3) {
-                    this.isAmountGreaterThan3 = true
+                    this.isAmountGreaterThan3 = 1 
+                } else if (this.amount === 0) {
+                    this.isAmountGreaterThan3 = 3
+                } else if (this.amount <=3) {
+                    this.isAmountGreaterThan3 = 2 
+                }
+            },
+            minusAmount() {
+                if (!(this.amount <= 0)) {
+                    this.amount--
                 }
             }
         },
@@ -21,15 +30,15 @@
 
 <template>
     <div class="flex w-full">
-        <div class="w-1/2 h-screen bg-gray-200">
+        <div class="w-1/2 h-screen bg-gray-200 flex justify-center items-center">
             <!-- thumbnail -->
-            <img src="../assets/images/sofa.png" alt="sofa thumbnail">
+            <img class="m-auto" src="../assets/images/sofa.png" alt="sofa thumbnail">
         </div>
-        <div class="w-1/2">
+        <div class="w-1/2 px-10">
             <!-- details -->
-            <div>
+            <div class="m-10">
                 <!-- title & desc -->
-                <h1>Greyana Sofa</h1>
+                <h1 class="text-3xl font-bold">Greyana Sofa</h1>
                 <p>
                     Introducing the Greyana Sofa. The perfect combination of style and comfort. With its sleek and modern design, this sofa is a statement piece that will elevate any living space. The Greyana Sofa features a stunning grey upholstery that is both soft to the touch and durable for everyday use. Crafted with a sturdy wooden frame and high-density foam cushions, the Greyana Sofa offers unbeatable comfort and support. The seat and back cushions are also removable and reversible, making it easy to maintain and keep looking like new.
                 </p>
@@ -40,11 +49,13 @@
                     ${{ price }}
                 </div>
                 <div class="flex mt-2">
-                    <button @click="amount--" class="bg-black text-white px-2">-</button>
+                  <button @click="minusAmount()" class="bg-black text-white px-2">-</button>
                     <div class="border border-black px-5 bg-gray-100">{{ amount }}</div>
                     <button @click="amount++" class="bg-black text-white  px-2">+</button>
                 </div>
-                <p v-if="isAmountGreaterThan3">maximum items that can be added is 3</p>
+                <p v-if="isAmountGreaterThan3 === 1">maximum items that can be added is 3</p>
+                <p v-if="isAmountGreaterThan3 === 2">successfully added to cart</p>
+                <p v-if="isAmountGreaterThan3 === 3">add items to cart</p>
                 <div class="text-xl font-semibold mt-10">Subtotal: ${{ price * amount }}</div>
                 <div class="flex w-full justify-between items-center gap-5 mt-2 mr-5">
                     <button class="text-center w-full bg-black text-white py-4">Buy Now</button>
