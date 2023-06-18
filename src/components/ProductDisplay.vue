@@ -30,16 +30,16 @@
 
 <template>
     <div class="flex w-full">
-        <div class="w-1/2 h-screen bg-gray-200 flex justify-center items-center">
+        <div style="justify-content: center" class="w-1/2 h-screen bg-gray-200 flex justify-center items-center"> <!--justify-center doesn't render-->
             <!-- thumbnail -->
-            <img class="m-auto" src="../assets/images/sofa.png" alt="sofa thumbnail">
+            <img src="../assets/images/sofa.png" alt="sofa thumbnail">
         </div>
-        <div class="w-1/2 px-10">
+        <div style="padding: 5rem 2.5rem; flex-direction: column;" class="w-1/2 px-10 flex flex-col justify-between"> <!--classes doesn't render-->
             <!-- details -->
-            <div class="m-10">
+            <div>
                 <!-- title & desc -->
-                <h1 class="text-3xl font-bold">Greyana Sofa</h1>
-                <p>
+                <h1 style="font-weight: 600; font-size: 2.25rem;" class="text-5xl font-bold">Greyana Sofa</h1> <!--classes doesn't render-->
+                <p class="mt-2">
                     Introducing the Greyana Sofa. The perfect combination of style and comfort. With its sleek and modern design, this sofa is a statement piece that will elevate any living space. The Greyana Sofa features a stunning grey upholstery that is both soft to the touch and durable for everyday use. Crafted with a sturdy wooden frame and high-density foam cushions, the Greyana Sofa offers unbeatable comfort and support. The seat and back cushions are also removable and reversible, making it easy to maintain and keep looking like new.
                 </p>
             </div>
@@ -53,9 +53,9 @@
                     <div class="border border-black px-5 bg-gray-100">{{ amount }}</div>
                     <button @click="amount++" class="bg-black text-white  px-2">+</button>
                 </div>
-                <p v-if="isAmountGreaterThan3 === 1">maximum items that can be added is 3</p>
-                <p v-if="isAmountGreaterThan3 === 2">successfully added to cart</p>
-                <p v-if="isAmountGreaterThan3 === 3">add items to cart</p>
+                <p style="color: #FF0000;" class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 1">maximum items that can be added is 3</p>
+                <p style="color: #1DD000;" class="text-[#1DD000] mt-1" v-if="isAmountGreaterThan3 === 2">successfully added to cart</p>
+                <p style="color: #FF0000;" class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 3">item minimum is 1</p>
                 <div class="text-xl font-semibold mt-10">Subtotal: ${{ price * amount }}</div>
                 <div class="flex w-full justify-between items-center gap-5 mt-2 mr-5">
                     <button class="text-center w-full bg-black text-white py-4">Buy Now</button>
