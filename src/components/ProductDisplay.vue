@@ -29,16 +29,18 @@
 </script>
 
 <template>
-    <div class="flex w-full">
-        <div class="w-1/2 h-screen bg-gray-200 flex justify-center items-center">
+    <div class="flex w-full flex-col md:flex-row">
+        <div class="w-full md:w-1/2 h-[60vh] md:h-screen md:fixed bg-gray-200 flex justify-center items-center">
             <!-- thumbnail -->
             <img src="../assets/images/sofa.png" alt="sofa thumbnail">
         </div>
-        <div class="w-1/2 px-10 py-20 flex flex-col justify-between">
+        <div class="hidden md:block md:w-1/2 h-[60vh] md:h-screen bg-gray-200">
+        </div>
+        <div class="w-full md:w-1/2 px-5 md:px-10 py-10 md:py-20 lg:py-10 flex flex-col justify-between">
             <!-- details -->
             <div>
                 <!-- title & desc -->
-                <h1 class="text-5xl font-bold">Greyana Sofa</h1>
+                <h1 class="text-4xl md:text-5xl font-bold">Greyana Sofa</h1>
                 <p class="mt-2">
                     Introducing the Greyana Sofa. The perfect combination of style and comfort. With its sleek and modern design, this sofa is a statement piece that will elevate any living space. The Greyana Sofa features a stunning grey upholstery that is both soft to the touch and durable for everyday use. Crafted with a sturdy wooden frame and high-density foam cushions, the Greyana Sofa offers unbeatable comfort and support. The seat and back cushions are also removable and reversible, making it easy to maintain and keep looking like new.
                 </p>
