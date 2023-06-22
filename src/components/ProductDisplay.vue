@@ -55,9 +55,9 @@
                     <div class="border border-black px-5 bg-gray-100">{{ amount }}</div>
                     <button @click="amount++" class="bg-black text-white  px-2">+</button>
                 </div>
-                <p style="color: #FF0000;" class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 1">maximum items that can be added is 3</p>
-                <p style="color: #1DD000;" class="text-[#1DD000] mt-1" v-if="isAmountGreaterThan3 === 2">successfully added to cart</p>
-                <p style="color: #FF0000;" class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 3">item minimum is 1</p>
+                <p class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 1">maximum items that can be added is 3</p>
+                <p class="text-[#1DD000] mt-1" v-if="isAmountGreaterThan3 === 2">successfully added to cart</p>
+                <p class="text-[#FF0000] mt-1" v-if="isAmountGreaterThan3 === 3">item minimum is 1</p>
                 <div class="text-xl font-semibold mt-10">Subtotal: ${{ price * amount }}</div>
                 <div class="flex w-full justify-between items-center gap-5 mt-2 mr-5">
                     <button class="text-center w-full bg-black text-white py-4">Buy Now</button>
